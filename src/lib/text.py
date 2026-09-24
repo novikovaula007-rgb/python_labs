@@ -68,11 +68,6 @@ def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
 
     Пары (слово, частота) сортируются по убыванию частоты,
     а при равной частоте - по алфавиту (по возрастанию).
-
-    Пример:
-    >>> freq = {"a": 3, "b": 2, "c": 1}
-    >>> top_n(freq, 2)
-    [('a', 3), ('b', 2)]
     """
     pairs = list(freq.items())
 
@@ -81,9 +76,7 @@ def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
     return pairs[:n]
 
 
-if __name__ == "__main__":
-    # небольшие проверки, запускаются командой: python text.py
-    
+if __name__ == "__main__":  
     # normalize
     assert normalize("ПрИвЕт\nМИр\t") == "привет мир"
     assert normalize("ёжик, Ёлка") == "ежик, елка"
