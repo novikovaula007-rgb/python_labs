@@ -2,7 +2,7 @@ def format_record(rec: tuple[str, str, float]) -> str:
     """Форматирует запись о студенте в текстовую строку.
     Raises:
         TypeError: Если входные данные имеют неверный тип.
-        ValueError: Если ФИО содержит менее 2 слов или группа пустая.
+        ValueError: Если ФИО содержит менее 2 слов, группа пустая или неверный GPA.
     """
     if not isinstance(rec, tuple) or len(rec) != 3:
         raise TypeError("Запись должна быть кортежем из 3 элементов: (fio, group, gpa).")
@@ -14,6 +14,9 @@ def format_record(rec: tuple[str, str, float]) -> str:
 
     if isinstance(gpa, bool) or not isinstance(gpa, (int, float)):
         raise TypeError("GPA должен быть числом (float или int).")
+
+    if gpa < 0 or gpa > 5:
+        raise ValueError("GPA должен принадлежать промежутку от 0.0 до 5.0")
 
     fio_parts = fio.split()
     if len(fio_parts) < 2:

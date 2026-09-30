@@ -20,16 +20,18 @@ def unique_sorted(nums: list[float | int]) -> list[float | int]:
     unique_nums = []
 
     for x in nums:
-        if not any(x == existing for existing in unique_nums):
+        if x not in unique_nums:
             unique_nums.append(x)
 
-    for i in range(1, len(unique_nums)):
-        key = unique_nums[i]
-        j = i - 1
-        while j >= 0 and unique_nums[j] > key:
-            unique_nums[j + 1] = unique_nums[j]
-            j -= 1
-        unique_nums[j + 1] = key
+    for i in range(len(unique_nums)):
+        swapped = False
+        for j in range(0, len(unique_nums) - i - 1):
+            if unique_nums[j] > unique_nums[j + 1]:
+                unique_nums[j], unique_nums[j + 1] = unique_nums[j + 1], unique_nums[j]
+                swapped = True
+                
+        if not swapped:
+            break
 
     return unique_nums
 
