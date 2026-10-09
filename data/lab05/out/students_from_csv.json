@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Иван",
+    "group": "ИВТ-101",
+    "grade": "5",
+    "email": ""
+  },
+  {
+    "name": "Мария",
+    "group": "ИВТ-102",
+    "grade": "",
+    "email": ""
+  },
+  {
+    "name": "Пётр",
+    "group": "",
+    "grade": "4",
+    "email": "petr@mail.ru"
+  }
+]

@@ -1,0 +1,5 @@
+[
+  {"name": "Иван", "group": "ИВТ-101", "grade": 5},
+  {"name": "Мария", "group": "ИВТ-102"},
+  {"name": "Пётр", "grade": 4, "email": "petr@mail.ru"}
+]
