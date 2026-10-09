@@ -10,8 +10,6 @@ pip install -r requirements.txt
 ## Задание A - JSON <-> CSV (json_csv.py)
 Модуль содержит две функции конвертации и одну вспомогательную. `json_to_csv(json_path, csv_path)` читает JSON-файл (список словарей) и записывает его в CSV: ключи словарей становятся колонками, каждый словарь - одной строкой. Если у какого-то объекта нет нужного ключа - в ячейку записывается пустая строка. `csv_to_json(csv_path, json_path)` делает обратное: первая строка CSV - заголовок, каждая следующая строка превращается в словарь, результат записывается в JSON через `json.dump(..., ensure_ascii=False, indent=2)`. Вспомогательная `check_extension(path, extension)` проверяет расширение файла и поднимает `ValueError`, если оно неверное. Для чтения JSON и записи CSV используются функции `read_text` и `write_csv` из ЛР4 (`src/lab04/io_txt_csv.py`). Расположен в `src/lab05/json_csv.py`.
 
-![Задание A - JSON в CSV](../../images/lab05/ex_01.png)
-
 ![Задание A - CSV в JSON](../../images/lab05/ex_02.png)
 
 ## Задание B - CSV -> XLSX (csv_xlsx.py)
@@ -97,6 +95,8 @@ python -m src.lab05.json_csv
   }
 ]
 ```
+
+![Задание A - JSON в CSV](../../images/lab05/ex_01.png)
 
 ### 3. CSV -> XLSX
 
